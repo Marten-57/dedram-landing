@@ -11,6 +11,9 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-X824GP9F68');
+  function trackEvent(name, label){
+    if (typeof gtag === 'function') { gtag('event', name, {event_label: label}); }
+  }
 </script>
 <meta name="description" content="DeDram helps U.S. businesses convert overdue B2B invoices into cash instead of continuing to spend time and resources pursuing them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -301,7 +304,7 @@
 <header>
   <div class="wrap">
     <div class="logo">DeDram</div>
-    <a class="nav-cta" href="#contact">Get a cash offer</a>
+    <a class="nav-cta" href="#contact" onclick="trackEvent('cta_click','header')">Get a cash offer</a>
   </div>
 </header>
 
@@ -311,7 +314,7 @@
       <h1>Cash for invoices your customers haven't paid yet.</h1>
       <p class="sub">DeDram helps U.S. businesses convert overdue B2B invoices into cash — instead of continuing to spend time and resources pursuing them.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="#contact">Get a cash offer</a>
+        <a class="btn-primary" href="#contact" onclick="trackEvent('cta_click','hero')">Get a cash offer</a>
         <a class="btn-secondary" href="#how-it-works">How it works</a>
       </div>
     </div>
@@ -431,7 +434,7 @@
     <div>
       <h2 style="font-size:30px;">Get a cash offer</h2>
       <p class="contact-note">Tell us about the invoice — the debtor, the amount, and how long it's been outstanding. We'll respond within one business day, and there's no cost or obligation.</p>
-      <a class="contact-email" href="mailto:info@dedram.com">info@dedram.com</a>
+      <a class="contact-email" href="mailto:info@dedram.com" onclick="trackEvent('email_click','contact_section')">info@dedram.com</a>
     </div>
   </div>
 </section>
