@@ -168,8 +168,7 @@
   }
 
   /* steps */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
-  @media (max-width:760px){.steps{grid-template-columns:1fr;}}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}  @media (max-width:760px){.steps{grid-template-columns:1fr;}}
   .step{
     padding:0 28px 0 0;
     border-right:1px solid var(--line);
@@ -187,6 +186,24 @@
   }
   .step h3{font-size:20px;margin-bottom:10px;}
   .step p{font-size:15.5px;}
+
+  /* steps as a vertical list (for longer sequences) */
+  .steps-list{border-top:1px solid var(--line);}
+  .step-row{
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:20px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  @media (max-width:600px){.step-row{grid-template-columns:32px 1fr;gap:14px;}}
+  .step-num{
+    font-family:'Newsreader',serif;
+    font-size:22px;
+    color:var(--accent);
+  }
+  .step-body h3{font-size:19px;margin-bottom:8px;font-weight:500;}
+  .step-body p{font-size:15.5px;color:var(--ink-soft);}
 
   /* value list */
   .value-list{border-top:1px solid var(--line);}
@@ -227,6 +244,31 @@
   }
   .elig-quiet h3{font-size:15px;color:var(--muted);font-weight:500;margin-bottom:12px;}
   .elig-quiet li{font-size:14.5px;padding:9px 0;}
+
+  /* criteria (compact inline list) */
+  .criteria{margin-top:28px;}
+  .criteria-label{
+    font-size:13.5px;
+    color:var(--muted);
+    display:block;
+    margin-bottom:10px;
+  }
+  .criteria-inline{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .criteria-inline li{padding:0;}
+  .criteria-inline li:not(:last-child)::after{
+    content:"·";
+    margin:0 12px;
+    color:var(--line);
+  }
 
   /* principles */
   .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
@@ -346,10 +388,23 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Who this is for</div>
-      <h2>Built for companies carrying invoices they've stopped chasing.</h2>
-      <p>DeDram works with U.S. businesses that have older commercial invoices they no longer want to spend time or resources pursuing — distributors, manufacturers, commercial service companies, staffing companies, and logistics companies among them.</p>
+      <h2>For U.S. businesses carrying older commercial receivables.</h2>
+      <p>DeDram works with U.S. businesses that have older commercial receivables — distributors, manufacturers, commercial service companies, staffing companies, and logistics companies among them.</p>
+    </div>
+    <div class="criteria">
+      <span class="criteria-label">We typically look at:</span>
+      <ul class="criteria-inline">
+        <li>U.S. B2B receivables</li>
+        <li>30–180+ days past due</li>
+        <li>Business/commercial debtors</li>
+        <li>Goods or services delivered</li>
+        <li>No active dispute or bankruptcy</li>
+        <li>Generally $10,000+ per invoice</li>
+      </ul>
     </div>
   </div>
+</section>
+
 </section>
 
 <section>
@@ -366,7 +421,7 @@
       </div>
       <div class="principle">
         <h3>Confidential process</h3>
-        <p>Submitting an invoice for an offer does not notify the debtor. Nothing moves until you accept.</p>
+        <p>Initial discussions don't require customer or invoice information. Detailed information is only requested when there is a potential transaction, with appropriate confidentiality protections in place.</p>
       </div>
       <div class="principle">
         <h3>We take over the follow-up</h3>
@@ -380,23 +435,43 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">How it works</div>
-      <h2>Three steps to see if there's a fit.</h2>
+      <h2>From a first conversation to a completed purchase.</h2>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="num">1</div>
-        <h3>Tell us what you have</h3>
-        <p>Share some basic information about the overdue receivables you're considering selling. Takes a few minutes, no cost, no obligation.</p>
+    <div class="steps-list">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Tell us what you're carrying</h3>
+          <p>Share basic information about the receivables — approximate balance, age, type of debtor, and collection history. No sensitive documents are required to start.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="num">2</div>
-        <h3>We review the opportunity</h3>
-        <p>We look at the receivables, the underlying documentation, and the debtor profile to determine whether it fits our purchasing criteria.</p>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>We review the opportunity</h3>
+          <p>We discuss the receivables and determine whether there is a potential fit.</p>
+        </div>
       </div>
-      <div class="step">
-        <div class="num">3</div>
-        <h3>We discuss a purchase</h3>
-        <p>If there's a fit, we'll work through the information, documentation, and terms needed to complete a purchase — and take over the follow-up with the debtor from there.</p>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Confidential information is exchanged</h3>
+          <p>If appropriate, we establish confidentiality protections before reviewing detailed account information and supporting documentation.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>We conduct due diligence and discuss terms</h3>
+          <p>We review the receivables, documentation, and debtor circumstances and, if appropriate, provide purchase terms.</p>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3>Complete the purchase</h3>
+          <p>Once terms and documentation are agreed, the receivables are transferred and the agreed purchase price is paid.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -425,6 +500,17 @@
         <h3>No obligation to sell</h3>
         <p>The assessment and offer are free. If the number doesn't work for you, walk away — nothing owed.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Before you reach out</div>
+      <h2>You don't have to send us an invoice to get started.</h2>
+      <p>We understand that overdue invoices can contain commercially sensitive information. The initial conversation doesn't require customer names, invoices, contracts, or other confidential documents.</p>
+      <p style="margin-top:14px;">We first discuss your receivables at a high level. If there appears to be a potential fit, we can establish confidentiality protections before detailed information is exchanged.</p>
     </div>
   </div>
 </section>
