@@ -96,6 +96,11 @@
     max-width:34em;
   }
   .hero-actions{margin-top:34px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .cta-reassurance{
+    margin-top:16px;
+    font-size:13.5px;
+    color:var(--muted);
+  }
   .btn-primary{
     display:inline-block;
     background:var(--ink);
@@ -270,6 +275,37 @@
     color:var(--line);
   }
 
+  /* FAQ */
+  .faq-list{border-top:1px solid var(--line);}
+  .faq-item{
+    border-bottom:1px solid var(--line);
+    padding:20px 0;
+  }
+  .faq-item summary{
+    font-family:'Newsreader',serif;
+    font-size:19px;
+    cursor:pointer;
+    list-style:none;
+    position:relative;
+    padding-right:28px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";
+    position:absolute;
+    right:0;
+    top:0;
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:20px;
+    color:var(--muted);
+  }
+  .faq-item[open] summary::after{content:"–";}
+  .faq-item p{
+    margin-top:12px;
+    font-size:15.5px;
+    max-width:42em;
+  }
+
   /* principles */
   .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
   @media (max-width:760px){.principles{grid-template-columns:1fr;}}
@@ -353,12 +389,13 @@
 <section class="hero" style="border-top:none;">
   <div class="wrap">
     <div>
-      <h1>Cash for invoices your customers haven't paid yet.</h1>
-      <p class="sub">DeDram helps U.S. businesses convert overdue B2B invoices into cash — instead of continuing to spend time and resources pursuing them.</p>
+      <h1>Turn overdue B2B receivables into cash.</h1>
+      <p class="sub">DeDram purchases qualifying overdue commercial receivables from U.S. businesses, so you can stop spending time and resources chasing accounts that have already gone past due.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#contact" onclick="trackEvent('cta_click','hero')">Discuss your receivables</a>
         <a class="btn-secondary" href="#how-it-works">How it works</a>
       </div>
+      <p class="cta-reassurance">No invoice or customer information required to start. No cost or obligation.</p>
     </div>
     <div>
       <div class="invoice-mock">
@@ -399,33 +436,34 @@
         <li>Business/commercial debtors</li>
         <li>Goods or services delivered</li>
         <li>No active dispute or bankruptcy</li>
-        <li>Generally $10,000+ per invoice</li>
       </ul>
     </div>
   </div>
 </section>
 
-</section>
-
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Who we are</div>
-      <h2>A simple way to turn overdue invoices into cash.</h2>
-      <p>DeDram helps U.S. businesses convert overdue commercial invoices into cash. Every invoice is reviewed on its own facts — the debtor, the age, and the documentation — and we take over the follow-up once you accept.</p>
+      <div class="kicker">Why DeDram</div>
+      <h2>A straightforward process for overdue receivables.</h2>
+      <p>DeDram reviews each opportunity individually and only moves forward when the receivable appears suitable for purchase.</p>
     </div>
-    <div class="principles">
-      <div class="principle">
-        <h3>Individually reviewed</h3>
-        <p>Priced on the debtor, the age, and the documentation — not a flat percentage across every invoice.</p>
+    <div class="value-list">
+      <div class="value-row">
+        <h3>Individually assessed</h3>
+        <p>We look at the debtor, age of the receivable, documentation, collection history, and other relevant circumstances before discussing terms. There is no automatic approval or standard purchase price.</p>
       </div>
-      <div class="principle">
-        <h3>Confidential process</h3>
-        <p>Initial discussions don't require customer or invoice information. Detailed information is only requested when there is a potential transaction, with appropriate confidentiality protections in place.</p>
+      <div class="value-row">
+        <h3>Confidential from the start</h3>
+        <p>You do not need to provide customer names, invoices, contracts, or other sensitive documents to begin. We first discuss the receivables at a high level and request detailed information only if there is a potential fit.</p>
       </div>
-      <div class="principle">
-        <h3>We take over the follow-up</h3>
-        <p>Once you accept, established third-party recovery professionals handle the follow-up from there.</p>
+      <div class="value-row">
+        <h3>Professional recovery</h3>
+        <p>After a purchase is completed, collection and follow-up are handled by established third-party commercial collection professionals.</p>
+      </div>
+      <div class="value-row">
+        <h3>No obligation</h3>
+        <p>There is no cost to discuss your receivables or receive an assessment. If the terms do not work for you, you can simply decline.</p>
       </div>
     </div>
   </div>
@@ -507,10 +545,34 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Before you reach out</div>
-      <h2>You don't have to send us an invoice to get started.</h2>
-      <p>We understand that overdue invoices can contain commercially sensitive information. The initial conversation doesn't require customer names, invoices, contracts, or other confidential documents.</p>
-      <p style="margin-top:14px;">We first discuss your receivables at a high level. If there appears to be a potential fit, we can establish confidentiality protections before detailed information is exchanged.</p>
+      <div class="kicker">FAQ</div>
+      <h2>Questions worth answering before you reach out.</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Will my customer be contacted?</summary>
+        <p>Not during the review or offer process. If you accept and the receivable is purchased, established third-party recovery professionals take over the follow-up from there — not before.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do you determine the purchase price?</summary>
+        <p>Each receivable is reviewed individually — the debtor, the age, the documentation, and the likelihood of recovery. There's no fixed formula or blanket discount rate.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What information do I need to provide?</summary>
+        <p>To start, just a high-level description: approximate balance, age, debtor type, and collection history. Detailed account information and supporting documentation are only requested if there's a potential fit, with confidentiality protections established first.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What types of receivables do you purchase?</summary>
+        <p>U.S. business-to-business receivables, typically 30–180+ days past due, where goods or services were delivered and aren't in active dispute or bankruptcy.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens after I accept an offer?</summary>
+        <p>We finalize the purchase documentation and terms. Once those are agreed, the receivable is transferred and the agreed purchase price is paid according to those terms.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I reject the offer?</summary>
+        <p>Nothing further happens. There's no cost or obligation at any stage before you accept, and declining doesn't affect anything else.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -521,6 +583,7 @@
       <h2 style="font-size:30px;">Discuss your receivables</h2>
       <p class="contact-note">If you have overdue commercial receivables you're considering selling, tell us about them. We'll review the opportunity and let you know if we're interested in taking it further — no cost or obligation.</p>
       <a class="contact-email" href="mailto:info@dedram.com" onclick="trackEvent('email_click','contact_section')">info@dedram.com</a>
+      <p class="cta-reassurance">No documents required to start · Confidential · No cost · No obligation</p>
     </div>
   </div>
 </section>
