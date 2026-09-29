@@ -18,7 +18,7 @@
 <meta name="description" content="DeDram helps U.S. businesses convert overdue B2B invoices into cash instead of continuing to spend time and resources pursuing them.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,600;1,6..72,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#1C2B3A;
@@ -28,6 +28,7 @@
     --line:#CBC3AF;
     --accent:#7A2E2E;
     --accent-soft:#F1E4E0;
+    --brass:#8C6A32;
     --muted:#6B7280;
   }
   *{box-sizing:border-box;}
@@ -58,13 +59,17 @@
     padding:26px 0;
     border-bottom:1px solid var(--line);
   }
-  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
   .logo{
     font-family:'Newsreader', serif;
-    font-size:22px;
-    font-weight:500;
-    letter-spacing:0.01em;
+    font-size:70px;
+    font-weight:600;
+    font-style:italic;
+    letter-spacing:-0.01em;
+    line-height:1;
   }
+  .logo-accent{color:var(--brass);}
+  @media (max-width:640px){.logo{font-size:46px;}}
   .nav-cta{
     text-decoration:none;
     font-size:15px;
@@ -167,9 +172,11 @@
   .section-head h2{font-size:30px;}
   .section-head p{margin-top:14px;font-size:16.5px;}
   .kicker{
-    font-size:14px;
-    color:var(--muted);
-    margin-bottom:10px;
+    font-size:19px;
+    font-weight:600;
+    color:var(--brass);
+    margin-bottom:12px;
+    letter-spacing:0.01em;
   }
 
   /* steps */
@@ -323,10 +330,23 @@
   .contact-note{font-size:15.5px;margin-top:16px;}
   .contact-email{
     display:inline-block;
-    margin-top:22px;
-    font-size:15.5px;
+    font-size:16.5px;
+    font-weight:500;
     text-decoration:none;
     border-bottom:1px solid var(--line);
+  }
+  .contact-methods{
+    margin-top:26px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:36px;
+  }
+  .contact-method-label{
+    display:block;
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:4px;
   }
   form{display:flex;flex-direction:column;gap:16px;}
   .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
@@ -381,7 +401,7 @@
 
 <header>
   <div class="wrap">
-    <div class="logo">DeDram</div>
+    <div class="logo">De<span class="logo-accent">Dram</span></div>
     <a class="nav-cta" href="#contact" onclick="trackEvent('cta_click','header')">Discuss your receivables</a>
   </div>
 </header>
@@ -582,7 +602,16 @@
     <div>
       <h2 style="font-size:30px;">Discuss your receivables</h2>
       <p class="contact-note">If you have overdue commercial receivables you're considering selling, tell us about them. We'll review the opportunity and let you know if we're interested in taking it further — no cost or obligation.</p>
-      <a class="contact-email" href="mailto:info@dedram.com" onclick="trackEvent('email_click','contact_section')">info@dedram.com</a>
+      <div class="contact-methods">
+        <div class="contact-method">
+          <span class="contact-method-label">Email</span>
+          <a class="contact-email" href="mailto:info@dedram.com" onclick="trackEvent('email_click','contact_section')">info@dedram.com</a>
+        </div>
+        <div class="contact-method">
+          <span class="contact-method-label">Phone</span>
+          <a class="contact-email" href="tel:+17753477540" onclick="trackEvent('phone_click','contact_section')">+1 (775) 347-7540</a>
+        </div>
+      </div>
       <p class="cta-reassurance">No documents required to start · Confidential · No cost · No obligation</p>
     </div>
   </div>
@@ -590,8 +619,8 @@
 
 <footer>
   <div class="wrap">
-    <span>DeDram · Invoice purchasing</span>
-    <span>&copy; 2026 DeDram. All rights reserved.</span>
+    <span>DeDram LLC · 539 W Commerce St, Dallas, TX 75208 · +1 (775) 347-7540</span>
+    <span>&copy; 2026 DeDram LLC. All rights reserved.</span>
   </div>
 </footer>
 
